@@ -155,6 +155,6 @@
 .arrow-down-block.fade {
     opacity: 0.1;  /* 滾動後透明度變化 */
 }
-.arrow-shadow{
+.text-shadow2{
     text-shadow: 0 0px 5px rgb(255, 255, 255);
 }
