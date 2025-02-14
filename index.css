@@ -1,0 +1,160 @@
+.upload{
+    width: 100%;
+    height: 100vh;
+}
+.banner-block{
+    width: 100wh;
+    height: 100vh;
+}
+.banner{
+    width: 100wh;
+    height: 100vh;
+}
+.upload-container {
+    display: flex;
+    width: 60vw;
+    height: 400px;
+    background: linear-gradient(-45deg, #ff3cac, #562b7c, #2b86c5, #1bff99);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    border-radius: 10px;
+    overflow: hidden;
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.drop-area {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid #444;
+    padding: 20px;
+    color: white;
+    font-weight: 700;
+}
+.drop-area p {
+    border: 2px dashed white;
+    padding: 20px;
+    border-radius: 10px;
+}
+#file-name.active {
+    border: 2px solid white;
+}
+.upload-options {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-weight: 700;
+}
+.upload-options button, .upload-options input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #444;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.upload-options button:hover {
+    background: #666;
+}
+.upload-btn{
+    width: 40vw;
+    padding: 10px;
+    margin: 10px 0;
+    background: #444;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 50px;
+    animation-duration: 0.5s;
+}
+.upload-btn:active {
+    animation: animate__fadeOutDown; 
+    
+}
+.upload-btn:hover {
+    background: #666;
+}
+.prettier-input {
+    cursor: pointer;
+    width: 90%;
+}
+.arrow-down {
+    position: relative;
+    display: flex; /* 讓內部線條可以用 flex 排列 */
+    justify-content: center; /* 讓箭頭居中 */
+    align-items: center;
+    width: 100px; /* 整體寬度 */
+    height: 60px; /* 整體高度 */
+}
+.arrow-down::before{
+    content: "";
+    position: absolute;
+    width: 50px; /* 線條長度 */
+    height: 6px; /* 線條粗細 */
+    background-color: white; /* 箭頭顏色 */
+    border-radius: 10px; /* 讓線條圓潤 */
+    top: 50%; /* 確保線條垂直居中 */
+    right: 42%; 
+    transform-origin: center;
+}
+.arrow-down::after {
+    content: "";
+    position: absolute;
+    width: 50px; /* 線條長度 */
+    height: 6px; /* 線條粗細 */
+    background-color: rgb(255, 255, 255); /* 箭頭顏色 */
+    border-radius: 10px; /* 讓線條圓潤 */
+    top: 50%; /* 確保線條垂直居中 */
+    left: 42%; 
+    transform-origin: center;
+}
+.arrow-down::before {
+    box-shadow: 0 0px 10px 5px rgba(255, 255, 255, 0.15);
+    transform: translate(-0%, -50%) rotate(45deg);
+}
+.arrow-down::after {
+    box-shadow: 0 0px 10px 5px rgba(255, 255, 255, 0.15);
+    transform: translate(-0%, -50%) rotate(-45deg);
+}
+.banner {
+    position: relative;
+    height: 100vh;
+    background-color: #222831;
+}
+.banner-block {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.arrow-down-block {
+    position: absolute;
+    top: 50%;  /* 初始位置 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.6; /* 初始不透明 */
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out; /* 分開兩個過渡效果 */
+    z-index: 1000;
+
+}
+.arrow-down-block.move {
+    top: 90%;  /* 滾動後移動到下方位置 */
+}
+.arrow-down-block.fade {
+    opacity: 0.1;  /* 滾動後透明度變化 */
+}
+.arrow-shadow{
+    text-shadow: 0 0px 5px rgb(255, 255, 255);
+}

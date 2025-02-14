@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link href = "./main.css" rel="stylesheet">
+    <link href = "./index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1339462668297175071/1339464970282467419/WhaleSignal_Logo-r.png?ex=67aed176&is=67ad7ff6&hm=db7cc719f8e27f2145545c4ee65c1e296b4780ce5e3bfbb53d3c28e095521ed4&">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<script src="./index.js"></script>
+<script>
+    
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        const scrollPosition = window.scrollY;  // 獲取滾動位置
+        const viewportHeight = window.innerHeight;  // 獲取視窗高度
+
+        console.log(scrollPosition, viewportHeight);  // 檢查滾動位置與視窗高度
+
+        // 滾動超過視窗高度時顯示 header
+        if (scrollPosition > viewportHeight*0.8) {
+            header.classList.add('show-header');
+        } else {
+            header.classList.remove('show-header');
+        }
+    });
+    document.addEventListener('scroll', function() {
+        const arrowDownBlock = document.querySelector('.arrow-down-block');
+        arrowDownBlock.classList.add('move');
+        const viewportHeight = window.innerHeight;  // 獲取視窗高度
+        // 當滾動超過 100px 時，分開控制移動與透明度
+        if (window.scrollY > viewportHeight*0.5) {
+            
+            arrowDownBlock.classList.add('fade');  // 開始變透明
+        } else { 
+            arrowDownBlock.classList.remove('fade');  // 變回不透明
+        }
+    });
+</script>
+<body>
+    <header id = "header" class="header bc23 d-flex justify-content-between color1" >
+        <div id="logo-block" class="header-logo d-flex align-items-center  ">
+            <a href="" class="logo d-flex  align-items-center">
+                <img id="logo-img" class="logo-img m-2" src="https://cdn.discordapp.com/attachments/1339462668297175071/1339518870028947548/image_19.png?ex=67af03a9&is=67adb229&hm=945ba2cdb19a9f3cc8bd91ff919c907167f02ac3ca9dd9004a4dfff9e4e35a94&" alt="" >
+                <div id="logo-name" class="logo-text m-2 Michroma ">WhaleSignal</div>
+            </a>
+        </div>
+        <div class="header-info d-flex align-items-center">
+            <a href="" id="analysis" class="shape-ex2 m-3 Rajdhani">
+                analysis
+                <div class="shape-line" ></div>
+            </a>
+            <a href="" id="premium" class="shape-ex2 m-3 Rajdhani">
+                premium
+                <div class="shape-line" ></div>
+            </a>
+            <a href="" id="user" class="user d-flex align-items-center">
+                <div id="user-account" class="shape-ex2 m-3 Rajdhani">
+                    username
+                    <div class="shape-line" ></div>
+                </div>
+                <img id="user-img" src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png " alt="" class="user-img">
+            </a>
+        </div>
+    </header>
+    <div class="bc4">
+        <div class="banner">
+            <div class="banner-block d-flex d-flex align-items-center justify-content-center">
+                <div class="arrow-down-block color1 d-flex flex-column">
+                    <div class="text-center arrow-shadow">
+                        Scroll down
+                    </div>
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+        </div>
+        <div class="upload bc54 d-flex align-items-center justify-content-center flex-column">
+            <div class="upload-container">
+                <div class="drop-area d-flex flex-column" id="drop-area">
+                    <label for="file-input" class="prettier-input">
+                        <p id="file-name">Drop music files here, or click to select</p>
+                        <input type="file" id="file-input" accept=".wav" hidden>
+                    </label>
+                </div>
+                <div class="upload-options d-flex align-items-center justify-content-center flex-column">
+                    <p>Paste YouTube Link</p>
+                    <input type="text" placeholder="Please enter a YouTube URL">
+                </div>
+            </div>
+            <button class="upload-btn animate__animated">Upload</button>
+        </div>
+    </div>
+    <footer class="footer bc32 d-flex justify-content-between color1">
+        <div class="d-flex flex-column justify-content-center text-start align-items m100">
+            <div class="footer-text text-start w-auto">email：whalesignal@gmail.com</div>
+            <div class="footer-text text-start w-auto">producer：Eric Wang, Ben Chan, Andrew Chang, Alice Lu, Joseph Fang, Gin Chang</div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center d-flex">
+            <a href="" class="footer-btn  animate__animated">
+                <img src="https://cdn-icons-png.flaticon.com/512/15047/15047435.png" alt="fb-icon" class="fb w50 h50">
+            </a>
+            <a href="" class="footer-btn animate__animated">
+                <img src="https://cdn-icons-png.flaticon.com/512/15707/15707749.png " alt="ig-icon" class="ig w50 h50">
+            </a>
+            <a href=".footer-btn" class="footer-btn animate__animated">
+                <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png " alt="x-icon" class="x ig w50 h50">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
