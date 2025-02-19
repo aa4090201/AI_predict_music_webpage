@@ -84,15 +84,18 @@ img{
 }
 .header{
     font-weight: 600;
-    width: 100%;
+    width: 100vw;
     height: 75px;
     position: fixed;
     border-radius: 0 0 75px 75px;
     top: -75px;
     transition: top 0.3s;  /* 添加平滑過渡效果 */
-    z-index: 1000; /* 確保 header 顯示在其他元素之上 */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-    z-index: 10001;
+    z-index: 100;
+}
+.header-height{
+    width: 100vw;
+    height: 75px;
 }
 .show-header {
     top: 0; /* 滾動到一定位置後顯示 */
@@ -101,6 +104,7 @@ img{
     width: 100wh;
     height: 150px;
     font-weight: 600;
+    justify-content: space-between;
 }
 .header-logo{
     padding: 0 0 0 75px;
@@ -125,7 +129,7 @@ img{
     background-size: 100% 100%; /* 讓背景從左到右填滿 */
     text-shadow: 0,0,10px,white;
 }
-.header-info{
+#header-info2{
     padding: 0 75px 0 ;
 }
 .footer-btn{
@@ -176,3 +180,252 @@ img{
 .text-shadow{
     text-shadow: 0 0px 5px rgba(255, 255, 255, 0.7);
 }
+.footer-text{
+    margin-left: 100px;
+}
+
+/* 隱藏 header-info (手機版) */
+.header-info {
+    font-size: 2rem;
+    text-shadow: 0 0 10px white;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    padding-top: 75px;
+    background: rgba(0, 0, 0, 0.15); /* 半透明白色 */
+    background: linear-gradient(to bottom, #00000015 0%,#22283115 50%);
+
+    backdrop-filter: blur(10px); /* 模糊效果 */
+    text-align: center;
+    transform: translateY(-100%);
+    transform: translateZ(1);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* 當 active 類別添加時，讓選單滑出 */
+#header-info.active {
+    transform: translateZ(1);
+    transform: translateY(0%);
+}
+#header-info2{
+    display: none;
+    display: flex;
+    align-items: center;
+}
+/* 設計 menu 按鈕 */
+
+.menu-toggle {
+    display: none;
+}
+
+   
+@media screen and (min-width: 100px) and (max-width: 600px) {
+    .footer{
+        height: auto;
+        justify-content: start;
+        flex-direction: column-reverse;
+        padding: 10px;
+        
+    }
+    .footer-text{
+        max-width: 60vw;
+        margin: 5px auto ;
+        text-align: center;
+    }
+    .footer-btn{
+        margin: 15px 15px;
+    }
+    .menu-toggle {
+        display: block;
+        margin-right: 3rem;
+    }
+    #header-info2{
+        display: none;
+    }
+    .user-img{
+        display: none;
+    }
+    .logo-img{
+        width: 30px;
+        height: 30px;
+    }
+    .menu-toggle{
+        margin: auto 3rem auto auto;
+        display:flex;
+        flex-direction:column;
+        width:30px;
+        cursor:pointer;
+    }
+       
+    .menu-toggle span{
+        background: #ffffff;
+        border-radius:10px;
+        height:3px;
+        margin: 3px 0;
+        transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    
+    }
+    
+    
+    .menu-toggle span:nth-of-type(1){
+        width:50%;
+        
+    }
+    
+    .menu-toggle span:nth-of-type(2){
+        width:100%;
+    }
+    
+    
+    .menu-toggle span:nth-of-type(3){
+        width:75%;
+    
+    }
+    
+    
+    .menu-toggle input[type="checkbox"]{
+        display:none;
+    }
+    
+    
+    .menu-toggle input[type="checkbox"]:checked ~ span:nth-of-type(1){
+        transform-origin:bottom;
+        transform:rotatez(45deg) translate(3.42px,0px)
+    }
+    
+    
+    .menu-toggle input[type="checkbox"]:checked ~ span:nth-of-type(2){
+        
+        transform-origin:top;
+        transform:rotatez(-45deg)
+    }
+    
+    
+    .menu-toggle input[type="checkbox"]:checked ~ span:nth-of-type(3){
+        
+        transform-origin:bottom;
+        width:50%;
+        transform: translate(12.85px,-4.7px) rotatez(45deg);
+    
+    }
+    .menu-toggle:hover{
+        transform: scale(1.15);
+        
+    }
+    .menu-toggle:hover span{
+        box-shadow: 0px 0 7px rgba(255, 255, 255, 0.447);
+    }
+    .history-btn {
+        height: 40px;
+        width: 40px;
+        top: 148x;
+    }
+    .history-btn img {
+        height: 30px;
+        width: 30px;
+    }
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    .footer{
+        padding: 10px;
+    }
+    .footer-text{
+        max-width: 60vw;
+        margin-left: 25px;
+        text-align: start;
+    }
+    .footer-btn{
+        margin: 15px 15px;
+    }
+    .menu-toggle {
+        display: block;
+        margin-right: 3rem;
+    }
+    #header-info2{
+        display: none;
+    }
+    .user-img{
+        display: none;
+    }
+    .menu-toggle{
+        margin: auto 3rem;
+        display:flex;
+        flex-direction:column;
+        width:30px;
+        cursor:pointer;
+    }
+    .menu-toggle{
+        margin: auto 3rem;
+        display:flex;
+        flex-direction:column;
+        width:30px;
+        cursor:pointer;
+        transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+
+    }   
+    .menu-toggle:hover{
+        transform: scale(1.15);
+        
+    }
+    .menu-toggle span{
+        background: #ffffff;
+        border-radius:10px;
+        height:3px;
+        margin: 3px 0;
+        transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    
+    }
+    .menu-toggle:hover span{
+        box-shadow: 0px 0 7px rgba(255, 255, 255, 0.447);
+    }
+    
+    .menu-toggle span:nth-of-type(1){
+        width:50%;
+        
+    }
+    
+    .menu-toggle span:nth-of-type(2){
+        width:100%;
+    }
+    
+    
+    .menu-toggle span:nth-of-type(3){
+        width:75%;
+    
+    }
+    
+    
+    .menu-toggle input[type="checkbox"]{
+        display:none;
+    }
+    
+    
+    .menu-toggle input[type="checkbox"]:checked ~ span:nth-of-type(1){
+        transform-origin:bottom;
+        transform:rotatez(45deg) translate(3.42px,0px)
+    }
+    
+    
+    .menu-toggle input[type="checkbox"]:checked ~ span:nth-of-type(2){
+        
+        transform-origin:top;
+        transform:rotatez(-45deg)
+    }
+    
+    
+    .menu-toggle input[type="checkbox"]:checked ~ span:nth-of-type(3){
+        
+        transform-origin:bottom;
+        width:50%;
+        transform: translate(12.85px,-4.7px) rotatez(45deg);
+    
+    }
+    
+  }

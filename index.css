@@ -147,9 +147,8 @@
     opacity: 0.6; /* 初始不透明 */
     transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out; /* 分開兩個過渡效果 */
     z-index: 1000;
-
 }
-.arrow-down-block.move {
+.arrow-down-block {
     top: 90%;  /* 滾動後移動到下方位置 */
 }
 .arrow-down-block.fade {
@@ -157,4 +156,14 @@
 }
 .text-shadow2{
     text-shadow: 0 0px 5px rgb(255, 255, 255);
+}
+@media screen and (min-width: 100px) and (max-width: 1024px) {
+.upload-container {
+    width: 90vw;
+    height: 400px;
+
+}
+.upload-btn {
+    width: 70vw;
+}
 }
